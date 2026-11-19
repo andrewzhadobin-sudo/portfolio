@@ -2,17 +2,16 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <!-- Эта строчка нужна, чтобы сайт правильно масштабировался на телефонах -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио | Видеомонтаж</title>
+    <title>Andrew | Видеомонтаж Reels, Shorts и TikTok</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- Шапка сайта -->
     <header class="header">
-        <div class="logo">Andrew</div>
-        <nav>
+        <a href="#" class="logo">Andrew</a>
+        <nav class="nav">
             <a href="#portfolio">Работы</a>
             <a href="#contact">Контакты</a>
         </nav>
@@ -21,9 +20,13 @@
     <!-- Главный блок (Hero) -->
     <main class="container">
         <section class="hero">
+            <span class="badge">Монтаж коротких видео • 9:16</span>
             <h1>Создаю видео, которые цепляют и досматривают</h1>
             <p>Динамичный монтаж для Reels, Shorts и TikTok. Саунд-дизайн, цветокоррекция и работа с удержанием внимания с первых секунд.</p>
-            <a href="#contact" class="btn">Обсудить проект</a>
+            <div class="hero-actions">
+                <a href="#portfolio" class="btn">Смотреть работы</a>
+                <a href="https://t.me/dufuz" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Написать в Telegram</a>
+            </div>
         </section>
 
         <!-- Секция с примерами работ -->
@@ -31,7 +34,7 @@
             <h2>Примеры работ</h2>
             <div class="grid">
 
-                <div class="work-card">
+                <article class="work-card">
                     <video
                         class="video-player"
                         controls
@@ -41,11 +44,12 @@
                         <source src="videos/video1.mp4" type="video/mp4">
                         Ваш браузер не поддерживает воспроизведение видео.
                     </video>
+                    <span class="tag">Travel / Динамика</span>
                     <h3>Динамичный Travel-ролик</h3>
                     <p>Склейки по движению, саунд-дизайн, цветокоррекция.</p>
-                </div>
+                </article>
 
-                <div class="work-card">
+                <article class="work-card">
                     <video
                         class="video-player"
                         controls
@@ -55,15 +59,17 @@
                         <source src="videos/video2.mp4" type="video/mp4">
                         Ваш браузер не поддерживает воспроизведение видео.
                     </video>
+                    <span class="tag">Reels / Экспертный</span>
                     <h3>Экспертный Reels</h3>
                     <p>Анимированные субтитры, инфографика и смена планов.</p>
-                </div>
+                </article>
 
-                <div class="work-card">
+                <article class="work-card">
                     <img src="images/work3.jpg" alt="Рекламный креатив" class="preview-img">
+                    <span class="tag">Реклама / Креатив</span>
                     <h3>Рекламный креатив</h3>
                     <p>Акцент на триггеры, быстрый темп, высокая конверсия.</p>
-                </div>
+                </article>
 
             </div>
         </section>
@@ -71,10 +77,19 @@
         <!-- Блок контактов -->
         <section id="contact" class="contact">
             <h2>Готовы запустить крутой ролик?</h2>
-            <p>Напишите мне в мессенджер — обсудим задачу и сроки.</p>
-            <a href="https://t.me/dufuz" target="_blank" class="btn">Написать в Telegram</a>
+            <p>Напишите мне в мессенджер или соцсети — обсудим задачу, сроки и стоимость.</p>
+            <div class="social-links">
+                <a href="https://t.me/dufuz" target="_blank" rel="noopener noreferrer" class="btn">Telegram</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Instagram</a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline">YouTube / Shorts</a>
+            </div>
         </section>
     </main>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <p>© 2026 Andrew. Видеомонтаж и постпродакшн.</p>
+    </footer>
 
 </body>
 </html>
