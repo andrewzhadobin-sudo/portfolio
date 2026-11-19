@@ -1,4 +1,3 @@
-/* Общие настройки для всей страницы */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,168 +5,15 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Плавная прокрутка при клике на меню */
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #121212;
-    color: #ffffff;
-    font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #0e1015;
+    color: #f3f5f8;
     line-height: 1.6;
-}
-
-/* Шапка */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    border-bottom: 1px solid #262626;
-}
-
-.logo {
-    font-weight: bold;
-    font-size: 20px;
-    letter-spacing: 1px;
-}
-
-nav a {
-    color: #b0b0b0;
-    text-decoration: none;
-    margin-left: 24px;
-    transition: color 0.2s;
-}
-
-nav a:hover {
-    color: #ffffff;
-}
-
-/* Основной контейнер по центру */
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Первый экран */
-.hero {
-    text-align: center;
-    padding: 80px 0;
-}
-
-.hero h1 {
-    font-size: 40px;
-    max-width: 700px;
-    margin: 0 auto 20px;
-    line-height: 1.2;
-}
-
-.hero p {
-    color: #b0b0b0;
-    max-width: 580px;
-    margin: 0 auto 32px;
-    font-size: 18px;
-}
-
-/* Кнопка */
-.btn {
-    background-color: #7becf6;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 14px 32px;
-    border-radius: 8px;
-    font-weight: bold;
-    display: inline-block;
-    transition: background-color 0.2s, transform 0.2s;
-}
-
-.btn:hover {
-    background-color: #74ced4;
-    transform: translateY(-2px); /* Лёгкий подъём кнопки при наведении */
-}
-
-/* Секция портфолио */
-.portfolio {
-    padding: 60px 0;
-}
-
-.portfolio h2 {
-    font-size: 28px;
-    margin-bottom: 32px;
-    text-align: center;
-}
-
-/* Сетка из 3 колонок */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-}
-
-.work-card {
-    background-color: #1e1e1e;
-    border-radius: 12px;
-    padding: 20px;
-    border: 1px solid #2a2a2a;
-}
-
-/* Заглушка под видео или обложку 9:16 */
-.preview-img {
-    width: 100%;
-    height: 360px;         /* Сделаем повыше, как вертикальный формат 9:16 для Reels/Shorts */
-    object-fit: cover;     /* Картинка заполнит блок без искажения пропорций */
-    border-radius: 8px;
-    margin-bottom: 16px;
-    display: block;
-}
-
-.work-card h3 {
-    font-size: 18px;
-    margin-bottom: 8px;
-}
-
-.work-card p {
-    color: #a0a0a0;
-    font-size: 14px;
-}
-
-/* Блок контактов */
-.contact {
-    text-align: center;
-    background-color: #1e1e1e;
-    padding: 60px 20px;
-    border-radius: 16px;
-    margin: 40px 0 80px;
-}
-
-.contact h2 {
-    font-size: 28px;
-    margin-bottom: 12px;
-}
-
-.contact p {
-    color: #b0b0b0;
-    margin-bottom: 28px;
-}
-
-/* Адаптация под телефоны (экраны меньше 768px) */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 28px;
-    }
-    .grid {
-        grid-template-columns: 1fr; /* Карточки встают в 1 колонку */
-    }
-}.video-player {
-    width: 100%;
-    aspect-ratio: 9 / 16;   /* Идеальные пропорции для Reels, Shorts и TikTok */
-    object-fit: cover;
-    border-radius: 8px;
-    background-color: #000000;
-    margin-bottom: 16px;
-    display: block;
-}html {
-    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 /* Шапка с лёгким размытием при скролле */
@@ -175,6 +21,11 @@ nav a:hover {
     position: sticky;
     top: 0;
     z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 28px;
+    background: rgba(14, 16, 21, 0.72);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -183,6 +34,36 @@ nav a:hover {
 .logo {
     text-decoration: none;
     font-weight: 700;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    color: #d0d5dd;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.2s ease;
+}
+
+.nav a:hover {
+    color: #ffffff;
+}
+
+.container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Главный блок */
+.hero {
+    text-align: center;
+    padding: 72px 16px 56px;
 }
 
 .badge {
@@ -195,12 +76,43 @@ nav a:hover {
     margin-bottom: 16px;
 }
 
+.hero h1 {
+    font-size: clamp(30px, 5vw, 48px);
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    max-width: 640px;
+    margin: 0 auto 28px;
+    color: #b8c0cc;
+    font-size: 17px;
+}
+
 .hero-actions,
 .social-links {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
     justify-content: center;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 10px;
+    background: #2f6fed;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+    background: #255cd0;
+    transform: translateY(-2px);
 }
 
 .btn-outline {
@@ -212,15 +124,40 @@ nav a:hover {
     background: rgba(255, 255, 255, 0.08);
 }
 
-/* Карточки работ с плавным подъёмом и свечением */
+/* Портфолио */
+.portfolio {
+    padding: 40px 0 64px;
+}
+
+.portfolio h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 32px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+/* Карточки работ с плавным покачиванием, подъёмом и свечением */
 .work-card {
+    --wave-x: 0px;
+    --wave-y: 0px;
+    --wave-tilt: 0deg;
+    --hover-lift: 0px;
+    background: rgba(22, 26, 35, 0.88);
+    border-radius: 16px;
+    padding: 16px;
+    transform: translate3d(var(--wave-x), calc(var(--wave-y) + var(--hover-lift)), 0) rotate(var(--wave-tilt));
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .work-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(255, 255, 255, 0.22);
+    --hover-lift: -6px;
+    border-color: rgba(140, 190, 255, 0.35);
     box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
 }
 
@@ -244,11 +181,40 @@ nav a:hover {
     margin-bottom: 10px;
 }
 
+.work-card h3 {
+    font-size: 19px;
+    margin-bottom: 6px;
+}
+
+.work-card p {
+    color: #b8c0cc;
+    font-size: 14px;
+}
+
+/* Контакты */
+.contact {
+    text-align: center;
+    padding: 56px 20px;
+    margin-top: 16px;
+    background: rgba(22, 26, 35, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+}
+
+.contact h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.contact p {
+    color: #b8c0cc;
+    margin-bottom: 24px;
+}
+
 /* Подвал */
 .footer {
     text-align: center;
-    padding: 32px 20px;
-    margin-top: 48px;
+    padding: 32px 20px;margin-top: 48px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     font-size: 14px;
     opacity: 0.7;
