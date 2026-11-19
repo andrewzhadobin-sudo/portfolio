@@ -3,40 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrew | Видеомонтаж Reels, Shorts и TikTok</title>
+    <title>Andrew — Видеомонтаж Reels, Shorts и TikTok</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%233b82f6'/%3E%3Cpolygon points='25,18 46,32 25,46' fill='%23ffffff'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Фоновый холст для волн за курсором -->
-    <canvas id="wave-bg" style="position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
+    <canvas id="wave-bg" aria-hidden="true"></canvas>
 
-    <!-- Шапка сайта -->
     <header class="header">
-        <a href="#" class="logo">Andrew</a>
-        <nav class="nav">
+        <a href="#" class="logo">
+            <span class="logo-dot" aria-hidden="true"></span>
+            <span>Andrew</span>
+        </a>
+        <nav class="nav" aria-label="Навигация по странице">
             <a href="#portfolio">Работы</a>
             <a href="#contact">Контакты</a>
         </nav>
     </header>
 
-    <!-- Главный блок (Hero) -->
     <main class="container">
         <section class="hero">
-            <span class="badge">Монтаж коротких видео • 9:16</span>
-            <h1>Создаю видео, которые цепляют и досматривают</h1>
-            <p>Динамичный монтаж для Reels, Shorts и TikTok. Саунд-дизайн, цветокоррекция и работа с удержанием внимания с первых секунд.</p>
+            <div class="badge">Монтаж коротких видео • 9:16</div>
+            <h1>Создаю видео, которые <span>цепляют и досматривают</span></h1>
+            <p>Динамичный монтаж для Reels, Shorts и TikTok: ритм, саунд-дизайн, цветокоррекция и удержание внимания с первых секунд.</p>
             <div class="hero-actions">
                 <a href="#portfolio" class="btn">Смотреть работы</a>
                 <a href="https://t.me/dufuz" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Написать в Telegram</a>
             </div>
         </section>
 
-        <!-- Секция с примерами работ -->
         <section id="portfolio" class="portfolio">
-            <h2>Примеры работ</h2>
-            <div class="grid">
+            <div class="section-header">
+                <h2>Примеры работ</h2>
+                <p>Вертикальный формат 9:16 с акцентом на динамику, звук и удержание</p>
+            </div>
 
+            <div class="grid">
                 <article class="work-card">
                     <video
                         class="video-player"
@@ -49,7 +55,7 @@
                     </video>
                     <span class="tag">Travel / Динамика</span>
                     <h3>Динамичный Travel-ролик</h3>
-                    <p>Склейки по движению, саунд-дизайн, цветокоррекция.</p>
+                    <p>Склейки по движению, саунд-дизайн и цветокоррекция.</p>
                 </article>
 
                 <article class="work-card">
@@ -64,23 +70,20 @@
                     </video>
                     <span class="tag">Reels / Экспертный</span>
                     <h3>Экспертный Reels</h3>
-                    <p>Анимированные субтитры, инфографика и смена планов.</p>
+                    <p>Анимированные субтитры, акценты и смена планов.</p>
                 </article>
 
                 <article class="work-card">
                     <img src="images/work3.jpg" alt="Рекламный креатив" class="preview-img">
                     <span class="tag">Реклама / Креатив</span>
                     <h3>Рекламный креатив</h3>
-                    <p>Акцент на триггеры, быстрый темп, высокая конверсия.</p>
+                    <p>Сильный хук, быстрый темп и фокус на конверсию.</p>
                 </article>
-
             </div>
         </section>
 
-        <!-- Блок контактов -->
         <section id="contact" class="contact">
-            <h2>Готовы запустить крутой ролик?</h2>
-            <p>Напишите мне в мессенджер или соцсети — обсудим задачу, сроки и стоимость.</p>
+            <h2>Готовы запустить ролик?</h2><p>Напишите в мессенджер или соцсети — обсудим задачу, сроки и стоимость.</p>
             <div class="social-links">
                 <a href="https://t.me/dufuz" target="_blank" rel="noopener noreferrer" class="btn">Telegram</a>
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Instagram</a>
@@ -89,74 +92,79 @@
         </section>
     </main>
 
-    <!-- Подвал сайта -->
-    <footer class="footer"><p>© 2026 Andrew. Видеомонтаж и постпродакшн.</p>
+    <footer class="footer">
+        <p>© 2026 Andrew. Видеомонтаж и постпродакшн.</p>
     </footer>
 
-    <!-- Скрипт 1: Мягкое покачивание карточек как на волнах -->
     <script>
         (function () {
             if (window.matchMedia('(pointer: coarse)').matches) return;
 
             const cards = document.querySelectorAll('.work-card');
+            if (!cards.length) return;
+
             let mouseX = window.innerWidth / 2;
             let mouseY = window.innerHeight / 2;
             let currentX = mouseX;
             let currentY = mouseY;
 
-            window.addEventListener('mousemove', (e) => {
+            window.addEventListener('mousemove', function (e) {
                 mouseX = e.clientX;
                 mouseY = e.clientY;
             }, { passive: true });
 
-            function animateWaves() {
+            function animateCards(time) {
                 currentX += (mouseX - currentX) * 0.06;
                 currentY += (mouseY - currentY) * 0.06;
 
                 const normX = (currentX / window.innerWidth - 0.5) * 2;
                 const normY = (currentY / window.innerHeight - 0.5) * 2;
 
-                cards.forEach((card, index) => {
+                cards.forEach(function (card, index) {
                     const phase = index * 0.9;
-                    const waveOffset = Math.sin(performance.now() * 0.002 + phase) * 3;
+                    const waveOffset = Math.sin(time * 0.002 + phase) * 3;
                     const moveX = normX * (8 + index * 2);
                     const moveY = normY * 6 + waveOffset;
                     const tilt = normX * 1.4;
 
-                    card.style.setProperty('--wave-x', `${moveX.toFixed(2)}px`);
-                    card.style.setProperty('--wave-y', `${moveY.toFixed(2)}px`);
-                    card.style.setProperty('--wave-tilt', `${tilt.toFixed(2)}deg`);
+                    card.style.setProperty('--wave-x', moveX.toFixed(2) + 'px');
+                    card.style.setProperty('--wave-y', moveY.toFixed(2) + 'px');
+                    card.style.setProperty('--wave-tilt', tilt.toFixed(2) + 'deg');
                 });
 
-                requestAnimationFrame(animateWaves);
+                requestAnimationFrame(animateCards);
             }
 
-            animateWaves();
+            requestAnimationFrame(animateCards);
         })();
     </script>
 
-    <!-- Скрипт 2: Расходящиеся волны на фоне за курсором -->
     <script>
         (function () {
             const canvas = document.getElementById('wave-bg');
             if (!canvas || window.matchMedia('(pointer: coarse)').matches) return;
+
             const ctx = canvas.getContext('2d');
+            if (!ctx) return;
 
-            let width, height;
-            const ripples = [];
+            let width = 0;
+            let height = 0;
             let lastTime = 0;
+            const ripples = [];
 
-            function resize() {
+            function resizeCanvas() {
                 width = canvas.width = window.innerWidth;
                 height = canvas.height = window.innerHeight;
             }
-            resize();
-            window.addEventListener('resize', resize);
 
-            window.addEventListener('mousemove', (e) => {
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            window.addEventListener('mousemove', function (e) {
                 const now = performance.now();
                 if (now - lastTime < 45) return;
                 lastTime = now;
+
                 ripples.push({
                     x: e.clientX,
                     y: e.clientY,
@@ -165,7 +173,7 @@
                 });
             }, { passive: true });
 
-            function draw() {
+            function drawRipples() {
                 ctx.clearRect(0, 0, width, height);
 
                 for (let i = ripples.length - 1; i >= 0; i--) {
@@ -175,18 +183,17 @@
 
                     ctx.beginPath();
                     ctx.arc(r.x, r.y, r.radius, 0, Math.PI * 2);
-                    ctx.strokeStyle = `rgba(140, 190, 255, ${r.alpha.toFixed(3)})`;
+                    ctx.strokeStyle = 'rgba(140, 190, 255, ' + r.alpha.toFixed(3) + ')';
                     ctx.lineWidth = 1.5;
                     ctx.stroke();
 
                     if (r.alpha < 0.01) {
                         ripples.splice(i, 1);
                     }
-                }
-
-                requestAnimationFrame(draw);
+                }requestAnimationFrame(drawRipples);
             }
-            draw();
+
+            drawRipples();
         })();
     </script>
 
